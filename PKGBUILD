@@ -1,8 +1,8 @@
 # Maintainer: Daniel Hillenbrand <codeworkx [at] bbqlinux [dot] org>
 
 pkgname=bbqlinux-livemedia
-pkgver=1.3.4
-pkgrel=1
+pkgver=1.5.0
+pkgrel=2
 pkgdesc="Configuration of the BBQLinux live media"
 arch=('any')
 url="https://github.com/bbqlinux/bbqlinux-livemedia"
@@ -19,5 +19,4 @@ package() {
   cp -R "$srcdir/etc" etc
   cp -R "$srcdir/usr/lib" usr/lib
   cp -R "$srcdir/usr/share" usr/share
-  
 }

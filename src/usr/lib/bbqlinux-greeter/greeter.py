@@ -23,7 +23,8 @@ import stat
 import traceback
 import commands
 import sys
-from PyQt4 import QtCore
+
+from PyQt5 import QtCore
 
 class GreeterEngine(QtCore.QThread):
     ''' This is central to the bbqlinux greeter '''

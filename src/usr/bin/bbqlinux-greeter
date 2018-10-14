@@ -15,4 +15,4 @@
 #
 
 # Launch bbqlinux-python-switcher with all passed arguments (future reserved)
-/usr/bin/python2.7 -tt /usr/lib/bbqlinux-greeter/main.py $*
+/usr/bin/python3 -tt /usr/lib/bbqlinux-greeter/main.py $*

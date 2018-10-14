@@ -1,0 +1,11 @@
+#!/bin/bash
+
+pyrcc5 -o usr/share/bbqlinux-greeter/qt_resources_rc.py usr/share/bbqlinux-greeter/qt_resources.qrc
+
+sudo rm -rf /usr/bin/bbqlinux-greeter
+sudo rm -rf /usr/lib/bbqlinux-greeter
+sudo rm -rf /usr/share/bbqlinux-greeter
+
+sudo cp -R usr /
+
+bbqlinux-greeter $1

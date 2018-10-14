@@ -1,13 +1,13 @@
 # Maintainer: Daniel Hillenbrand <codeworkx [at] bbqlinux [dot] org>
 
 pkgname=bbqlinux-livemedia
-pkgver=1.5.0
-pkgrel=2
+pkgver=1.6.0
+pkgrel=1
 pkgdesc="Configuration of the BBQLinux live media"
 arch=('any')
 url="https://github.com/bbqlinux/bbqlinux-livemedia"
 license=('GPL')
-depends=('python2' 'qt4' 'python2-pyqt')
+depends=('python' 'python-pyqt5')
 
 package() {
   cd "$pkgdir"

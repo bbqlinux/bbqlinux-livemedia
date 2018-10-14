@@ -15,12 +15,12 @@
 #
 
 import sys
-import commands
-from PyQt4 import QtGui, QtCore, uic
+
+from PyQt5 import QtCore, QtWidgets
 from ui.qt_interface import GreeterWindow
-	
+
 # main entry
 if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     win = GreeterWindow()
     sys.exit(app.exec_())

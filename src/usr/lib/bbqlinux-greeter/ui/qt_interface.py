@@ -20,16 +20,16 @@ sys.path.append('/usr/share/bbqlinux-greeter')
 import os
 import string
 import subprocess
-from subprocess import call
-
-from PyQt4 import QtGui, QtCore, uic
 import qt_resources_rc
 
-class GreeterWindow(QtGui.QMainWindow):
+from subprocess import call
+from PyQt5 import QtGui, QtCore, QtWidgets, uic
+
+class GreeterWindow(QtWidgets.QMainWindow):
 
     def __init__(self):
-
-        QtGui.QMainWindow.__init__(self)
+        # Init
+        QtWidgets.QMainWindow.__init__(self)
         self.ui = uic.loadUi('/usr/share/bbqlinux-greeter/qt_interface.ui')
 
         # Set window title
@@ -41,13 +41,16 @@ class GreeterWindow(QtGui.QMainWindow):
         
         # Move main window to center
         qr = self.ui.frameGeometry()
-        cp = QtGui.QDesktopWidget().availableGeometry().center()
+        cp = QtWidgets.QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.ui.move(qr.topLeft())
         
         # Connect the buttons
-        self.connect(self.ui.button_exit, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
-        self.connect(self.ui.button_install, QtCore.SIGNAL("clicked()"), self.button_install_clicked)
+        self.ui.button_exit.clicked.connect(self.button_exit_clicked)
+        self.ui.button_install.clicked.connect(self.button_install_clicked)
+
+    def button_exit_clicked(self):
+        QtCore.QCoreApplication.instance().quit()
 
     def button_install_clicked(self):
         subprocess.call(["sudo", "/usr/bin/calamares"])
